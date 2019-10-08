@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-size: 18px;
+    background-color: #f6bd20;
+    font-family: sans-serif;
+}
+
+.container {
+    /* border: 5px solid darkred; */
+    display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Title */
+.title {
+    width: 50%;
+    height: 120px;
+    text-align: center;
+    margin: 5%;
+    /* background-color: #f65d20; */
+}
+
+/* Search */
+
+.search {
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    margin: 2%;
+    /* background-color: #20f660; */
+}
+
+.css__input__search {
+    width: 30%;
+    height: 40px;
+    padding: 12px 20px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.button__search {
+    width: 15%;
+    height: 40px;
+    position: relative;
+    left: -7px;
+    border-radius: 0px 20px 20px 0px; 
+    border: none;
+}
+
+.button__search:hover {
+    background-color: #356ABC;
+    color:white;
+}
+
+/* Sprite Pokemon */
+
+.pokemon {
+    width: 50%;
+    height: 250px;
+    /* background-color: #5920f6; */
+    margin: 5%;
+    text-align: center;
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* errors */
+
+.error {
+    font-weight: bold;
+    color: red;
+    font-size: 1.5em;
+}
+
+
