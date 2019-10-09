@@ -1,7 +1,8 @@
 body {
     margin: 0;
     font-size: 18px;
-    background-color: #f6bd20;
+    /* background-color: #f6bd20; */
+    background-color: #f6e58d;
     font-family: sans-serif;
 }
 
@@ -20,6 +21,7 @@ body {
     margin: 5%;
     /* background-color: #f65d20; */
 }
+
 
 /* Search */
 
@@ -58,12 +60,23 @@ body {
 
 .pokemon {
     width: 50%;
-    height: 250px;
-    /* background-color: #5920f6; */
-    margin: 5%;
-    text-align: center;
+    height: 100vh;
+    background-color: #5920f6;
 }
 
+.stats {
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 4px;
+    display: flex;
+
+}
+
+.sprite {
+    margin: 0 auto;
+    height: 250px;
+    border: 5px solid #000;
+}
 
 .hidden {
     display: none;
@@ -73,8 +86,69 @@ body {
 
 .error {
     font-weight: bold;
-    color: red;
+    color: #c0392b;
     font-size: 1.5em;
 }
 
+.container-bar {
+    width: 100px;
+    height: 20px;
+    border: 5px solid #000;
+    border-top: none;
+    border-right: none;
+    font-size: .8em;
+    font-weight: bold;
+    margin: 25px 25px;
+}
 
+.health-bar {
+    border: 2px solid #6ab04c;
+    border-radius: 4px;
+}
+
+.nameType {
+    height: 150px;
+    border: 5px solid #000;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 500px) and (min-width: 320px) {
+
+    .title {
+        width: 90%;
+    }
+
+    .title-img {
+        max-width: 100%;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+    .css__input__search {
+        width: 68%;
+    }
+
+    .button__search {
+        width: 28%;
+    }
+
+    .pokemon {
+        width: 100%;
+    }
+
+    .sprite {
+        height: 150px;
+        /* border: 3px solid #000; */
+    }
+
+    .error {
+        font-size: .8em;
+        text-align: center;
+        margin-top: 25%;
+        /* border: 5px solid #000; */
+    }
+}

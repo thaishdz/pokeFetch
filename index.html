@@ -7,18 +7,25 @@
     <title>PokeFetch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="searchPokemon()">
     <div class="container">
         <div class="title">
-            <img src="pokeFetch.png" alt="title">
+            <img src="pokeFetch.png" alt="title" class="title-img">
         </div>
         <div class="search">
-            <input type="text" id="js__input-search" class="css__input__search" placeholder="Pikachu ó 25">
+            <input type="text" id="js__input__search" class="css__input__search" placeholder="Pikachu ó 25">
             <button id="js__search__Button" class="button__search">Search</button>
         </div>
         <div class="pokemon">
+            <div class="stats hidden" id="stats-pokemon">
+                <div class="container-bar">
+                    <span id="hp" class="hp-bar"></span>
+                    <div class="health-bar"></div>
+                </div>
+                <img src="" alt="pokemon" id="js__pokemon__Sprite"  class="sprite">
+                <div id="name__type" class="nameType"></div>
+            </div>
             <p id="js__message__Error" class="error"></p>
-            <img src="" alt="pokemon" id="js__pokemon__Sprite" height="250" class="hidden">
         </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
