@@ -1,7 +1,7 @@
 
-const searchButton  = document.querySelector('#js__search__Button');
-const messageError  = document.querySelector('#js__message__Error');
-const pokemon       = document.querySelector('#js__pokemon__Sprite');
+const searchButton  = document.querySelector('#js__search__button');
+const messageError  = document.querySelector('#js__message__error');
+const pokemon       = document.querySelector('#js__pokemon__sprite');
 
 searchButton.addEventListener('click', searchPokemon);
 
@@ -53,13 +53,16 @@ function renderStats(stats) {
     
     const statsPokemon = document.querySelector("#stats-pokemon");
     const HP = document.querySelector("#hp");
-    const nameType = document.querySelector("#name__type");
+    const name = document.querySelector("#name");
+    const type = document.querySelector("#type");
     statsPokemon.classList.remove("hidden");
 
     stats.map( attribute => {
 
         HP.textContent = `HP: ${attribute.hp}`;
-        nameType.textContent = `${attribute.name} ${attribute.type}`
+        name.textContent = `${attribute.name}`;
+        type.textContent = `${attribute.type}`;
+
     });
 
 }

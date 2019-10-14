@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-size: 18px;
-    /* background-color: #f6bd20; */
     background-color: #f6e58d;
     font-family: sans-serif;
 }
@@ -56,7 +55,7 @@ body {
     color:white;
 }
 
-/* Sprite Pokemon */
+/* Pokemon */
 
 .pokemon {
     width: 50%;
@@ -65,17 +64,57 @@ body {
 }
 
 .stats {
-    height: 100%;
-    border: 1px solid #000;
-    border-radius: 4px;
+    height: 400px;
     display: flex;
-
+    flex-flow: column wrap-reverse; /* flex-flow: flex-direction flex-wrap */
+    border: 5px solid darkred; 
 }
 
-.sprite {
-    margin: 0 auto;
-    height: 250px;
+.container__sprite {
+    width: 150px;
+    height: 150px;
     border: 5px solid #000;
+    margin: 0 auto;
+}
+
+.container-bar {
+    width: 100px;
+    height: 20px;
+    border: 5px solid #000;
+    border-top: none;
+    border-right: none;
+    font-size: .8em;
+    font-weight: bold;
+    margin: 5px 25px;
+}
+
+.health-bar {
+    border: 2px solid #6ab04c;
+    border-radius: 4px;
+}
+
+
+/* stats styles */
+
+.container__description__stat {
+    width: 45%;
+    height: 60px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px 0px;
+    border: 5px solid darkred;
+    background: linear-gradient(155deg,  #85A7D6 0%, #85A7D6 55%, 
+    rgba(181,198,208,1) 55%, rgba(224,239,249,1) 100%);
+}
+
+.description-stat {
+    margin: 9%;
+}
+
+
+.description-stat.type {
+    text-align: right;
 }
 
 .hidden {
@@ -89,28 +128,6 @@ body {
     color: #c0392b;
     font-size: 1.5em;
 }
-
-.container-bar {
-    width: 100px;
-    height: 20px;
-    border: 5px solid #000;
-    border-top: none;
-    border-right: none;
-    font-size: .8em;
-    font-weight: bold;
-    margin: 25px 25px;
-}
-
-.health-bar {
-    border: 2px solid #6ab04c;
-    border-radius: 4px;
-}
-
-.nameType {
-    height: 150px;
-    border: 5px solid #000;
-}
-
 
 /* media queries */
 
