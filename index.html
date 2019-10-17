@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>PokeFetch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="searchPokemon()">
+<body>
     <div class="container">
         <div class="title">
-            <img src="pokeFetch.png" alt="title" class="title-img">
+            <img src="img/pokeFetch.png" alt="title" class="title-img">
         </div>
         <div class="search">
-            <input type="text" id="js__input__search" class="css__input__search" placeholder="Pikachu ó 25">
+            <input type="text" id="js__input__search" class="input__search" placeholder="'Pikachu' or '25'">
             <button id="js__search__button" class="button__search">Search</button>
         </div>
-        <div class="pokemon">
-            <div class="stats" id="stats-pokemon">
+        <div class="pokemon" id="backgroundType">
+            <div class="stats hidden" id="stats-pokemon">
                 <div class="container-bar">
                     <span id="hp" class="hp-bar"></span>
                     <div class="health-bar"></div>
@@ -27,28 +28,47 @@
                 </div>
                 <div class="container__description__stat">
                     <div class="description-stat" id="name"></div>
-                    <div class="description-stat type" id="type"></div>
+                    <div class="description-stat right-text" id="type"></div>
                 </div>
                 <div class="container__description__stat">
                     <div class="description-stat">Nº</div>
-                    <div id="number"></div>
+                    <div class="description-stat right-text" id="number"></div>
                 </div>
-                <div class="container__description__stat">
-                    <div class="description-stat">defense</div>
+                <div class="container__description__stat" id="defenseStat">
+                    <div class="description-stat">Defense</div>
+                    <div class="description-stat right-text" id="defense"></div>
+                </div>
+                <div class="container__description__stat" id="specialDefenseStat">
+                    <div class="description-stat">
+                        Special-defense
+                    </div>
+                    <div class="description-stat right-text" id="specialDefense"></div>
                 </div>
                 <div class="container__description__stat">
                     <div class="description-stat">
-                        special-defense
+                        Attack
                     </div>
+                    <div class="description-stat right-text" id="attack"></div>
                 </div>
-                <div class="container__description__stat">ATTACK</div>
-                <div class="container__description__stat">special-attack</div>
-                <div class="container__description__stat">SPEED</div>
+                <div class="container__description__stat">
+                    <div class="description-stat">
+                        Special-attack
+                    </div>
+                    <div class="description-stat right-text" id="specialAttack"></div>
+                </div>
+                <div class="container__description__stat">
+                    <div class="description-stat">
+                        Speed
+                    </div>
+                    <div class="description-stat right-text" id="speed"></div>
+                </div>
             </div>
-            <p id="js__message__error" class="error"></p>
+            <div class="error hidden" id="js__message__error" >
+                <p id="text__error"></p>
+                <img src="" alt="error" id="js__image__error">
+            </div>
         </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
-</body>
 </html>

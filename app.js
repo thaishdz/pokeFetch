@@ -1,7 +1,9 @@
 
 const searchButton  = document.querySelector('#js__search__button');
+const pokeSprite     = document.querySelector('#js__pokemon__sprite');
 const messageError  = document.querySelector('#js__message__error');
-const pokemon       = document.querySelector('#js__pokemon__sprite');
+const statsPokemon = document.querySelector("#stats-pokemon");
+
 
 searchButton.addEventListener('click', searchPokemon);
 
@@ -13,56 +15,102 @@ function searchPokemon() {
     const pokemon = `${BASE_URL}${textSearchInput}`;
     const stats = [];
     
-    axios.get("https://pokeapi.co/api/v2/pokemon/150")
+    axios.get(pokemon)
         .then(pokemonJSON => {
+            console.log(pokemonJSON);
+            
             stats.push({
                 name: pokemonJSON.data.name,
-                type: pokemonJSON.data.types[0].type.name,
+                ...pokemonJSON.data.types.length != 1 ? 
+                {type: [pokemonJSON.data.types[0].type.name, pokemonJSON.data.types[1].type.name].join("/")} :
+                {type: pokemonJSON.data.types[0].type.name}
+                ,
                 speed: pokemonJSON.data.stats[0].base_stat,
-                "special-defense": pokemonJSON.data.stats[1].base_stat,
-                "special-attack" : pokemonJSON.data.stats[2].base_stat,
+                specialDefense: pokemonJSON.data.stats[1].base_stat,
+                specialAttack : pokemonJSON.data.stats[2].base_stat,
                 defense : pokemonJSON.data.stats[3].base_stat,
                 attack : pokemonJSON.data.stats[4].base_stat,
                 hp : pokemonJSON.data.stats[5].base_stat,
-            })
+                number : pokemonJSON.data.game_indices[0].game_index
+            })    
             renderStats(stats);
             return renderPokemon(pokemonJSON.data.sprites.front_default);
         })
-        .catch(() => { 
+        .catch((error) => { 
+            console.error(error);
             return renderMessageError();
         })
 }
 
 
-function renderPokemon(sprite,stats) {
-
-    
-    messageError.textContent = '';
-    
-    pokemon.setAttribute('src', sprite);
+function renderPokemon(sprite) {
+    messageError.classList.add("hidden");
+    statsPokemon.classList.remove("hidden");
+    pokeSprite.src = sprite;
 }
 
 function renderMessageError() {
 
-    pokemon.style.display = 'none';
-    messageError.textContent = 'Ningún Pokémon Salvaje Apareció 😥';
+    const imageError  = document.querySelector('#js__image__error');
+
+    backgroundType.style.background = '#f6e58d';
+    statsPokemon.classList.add("hidden");
+    messageError.classList.remove("hidden");
+    imageError.src = "img/imageError.jpg";
+    text__error.textContent = 'No Wild Pokemon Found';
 }
 
 
 function renderStats(stats) {
     
-    const statsPokemon = document.querySelector("#stats-pokemon");
+    statsPokemon.classList.remove("hidden");
+
     const HP = document.querySelector("#hp");
     const name = document.querySelector("#name");
-    const type = document.querySelector("#type");
-    statsPokemon.classList.remove("hidden");
 
     stats.map( attribute => {
 
         HP.textContent = `HP: ${attribute.hp}`;
         name.textContent = `${attribute.name}`;
+        number.textContent = `${attribute.number}`;
+        
         type.textContent = `${attribute.type}`;
+        defense.textContent = `${attribute.defense}`;
+        specialDefense.textContent = `${attribute.specialDefense}`;
+        specialAttack.textContent = `${attribute.specialAttack}`;
+        attack.textContent = `${attribute.attack}`;
+        speed.textContent = `${attribute.speed}`;
 
     });
 
+    changeBackground(type.textContent);
+}
+
+function changeBackground(type) {
+
+    const typeBackground = type.split("/");
+    
+    switch (typeBackground.length != 1 ? typeBackground[1] : typeBackground[0]) {
+        case "grass":
+            backgroundType.style.background = '#A9CD88';
+        break;
+        case "fire":
+            backgroundType.style.background = '#BD5943';
+        break;
+        case "water":
+            backgroundType.style.background = '#8DC8F6';
+        break;
+        case "electric":
+            backgroundType.style.background = '#F8F2CB';
+        break;
+        case "ground":
+            backgroundType.style.background = '#BD5943';
+        break;
+        case "poison":
+            backgroundType.style.background = '#622283';
+        break;
+        case "rock":
+            backgroundType.style.background = '#9BA7AF';
+        break;
+    }
 }
