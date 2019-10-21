@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-size: 18px;
-    background-color: #f6e58d;
+    background-color: #F7DE5C;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -56,6 +56,7 @@ body {
     font-weight: bold;
     background-color: #356ABC;
     color: #f6e58d;
+    cursor: pointer;
 }
 
 /* Pokemon */
@@ -64,6 +65,7 @@ body {
     width: 100vw;
     height: 100vh;
     margin-top: 10%;
+    border-radius: 20px;
     /* background-color: #5920f6; */
 }
 
@@ -87,6 +89,7 @@ body {
     height: 150px;
     /* border: 3px solid #000; */
 }
+
 
 .container-bar {
     width: 100px;
@@ -160,6 +163,19 @@ body {
 
 /* media queries */
 
-/* @media screen and (max-width: 500px) and (min-width: 320px) {
+@media screen and (min-width: 320px) {
 
-} */
+    .container__description__stat {
+
+        width: 35%;
+    }
+
+    .description-stat {
+        /* margin: 12% 8%; */
+    }
+
+    .container__description__stat{
+
+        font-size: .6em;
+    }
+}

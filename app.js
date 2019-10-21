@@ -1,18 +1,28 @@
 
+const textSearchInput = document.querySelector('#js__input__search');
 const searchButton  = document.querySelector('#js__search__button');
 const pokeSprite     = document.querySelector('#js__pokemon__sprite');
 const messageError  = document.querySelector('#js__message__error');
 const statsPokemon = document.querySelector("#stats-pokemon");
 
 
+const handlerEnter = function(event) {
+    if (event.keyCode === 13) {
+     event.preventDefault();
+     searchButton.click();
+    }
+}
+
+
 searchButton.addEventListener('click', searchPokemon);
+textSearchInput.addEventListener('keyup', handlerEnter);
+
 
 function searchPokemon() {
 
     const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
-    const textSearchInput = document.querySelector('#js__input__search').value;
     
-    const pokemon = `${BASE_URL}${textSearchInput}`;
+    const pokemon = `${BASE_URL}${textSearchInput.value}`;
     const stats = [];
     
     axios.get(pokemon)
@@ -92,16 +102,16 @@ function changeBackground(type) {
     
     switch (typeBackground.length != 1 ? typeBackground[1] : typeBackground[0]) {
         case "grass":
-            backgroundType.style.background = '#A9CD88';
+            backgroundType.style.background = '#8df75c';
         break;
         case "fire":
-            backgroundType.style.background = '#BD5943';
+            backgroundType.style.background = '#ee8130';
         break;
         case "water":
-            backgroundType.style.background = '#8DC8F6';
+            backgroundType.style.background = '#6390f0';
         break;
         case "electric":
-            backgroundType.style.background = '#F8F2CB';
+            backgroundType.style.background = '#F7D02C';
         break;
         case "ground":
             backgroundType.style.background = '#BD5943';
@@ -110,7 +120,7 @@ function changeBackground(type) {
             backgroundType.style.background = '#622283';
         break;
         case "rock":
-            backgroundType.style.background = '#9BA7AF';
+            backgroundType.style.background = '#c65cf7';
         break;
     }
 }
