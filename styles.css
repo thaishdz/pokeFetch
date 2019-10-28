@@ -3,6 +3,7 @@ body {
     font-size: 18px;
     background-color: #F7DE5C;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 .container {
@@ -62,8 +63,8 @@ body {
 /* Pokemon */
 
 .pokemon {
-    width: 100vw;
-    height: 100vh;
+    width: 95vw;
+    /* height: 95vh; */
     margin-top: 10%;
     border-radius: 20px;
     /* background-color: #5920f6; */
@@ -81,7 +82,7 @@ body {
 .container__sprite {
     width: 150px;
     height: 150px;
-    border: 5px solid #000;
+    /* border: 5px solid #000; */
     margin: 22px 10px;
 }
 
@@ -122,7 +123,7 @@ body {
     font-size: 1em;
     font-weight: bold;
     border-radius: 20px 0px;
-    color: #605F5A;
+    health
 }
 
 #defenseStat {
@@ -150,6 +151,8 @@ body {
 #name_type {
     background: linear-gradient(180deg, #FFDACA 0%, #FFDACA 55%, 
     #e6a488 55%, #e6a488 100%);
+    margin-top: 8%;
+    /* border: 5px solid darkred; */
 }
 
 #numberStat{
@@ -190,27 +193,26 @@ body {
 input[type=text], button {
     outline: none;
 }
+
 /* media queries */
 
 @media screen and (min-width: 320px) {
-
-    /* .container__description__stat {
-        width: 40%;
-    } */
-
-
     .container__description__stat{
-
+        width: 43%;
         font-size: .8em;
+        margin-bottom: 5%;
     }
 
     .container__sprite {
-        width: 35%;
+        width: 38%;
         height: 30%;
     }
+}
 
-    .sprite {
-        height: 120px;
-        /* border: 3px solid #000; */
+@media screen and (min-width: 411px) {
+    .container__description__stat{
+        width: 45%;
+        margin-bottom: 5%;
+        font-size: .8em;
     }
 }

@@ -8,6 +8,6 @@ PokeFetch es una página web que mediante consultas a la API de [Pokemon](https:
 * Javascript 
 
 
-![logotipo-pokemon](https://cutt.ly/qein45l)
+![logotipo-pokemon](pokefetch.gif)
 
 

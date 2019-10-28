@@ -63,7 +63,7 @@ function renderMessageError() {
 
     const imageError  = document.querySelector('#js__image__error');
 
-    backgroundType.style.background = '#f6e58d';
+    backgroundType.style.background = '#F7DE5C';
     statsPokemon.classList.add("hidden");
     messageError.classList.remove("hidden");
     imageError.src = "img/imageError.jpg";
@@ -102,7 +102,7 @@ function changeBackground(type) {
     
     switch (typeBackground.length != 1 ? typeBackground[1] : typeBackground[0]) {
         case "grass":
-            backgroundType.style.background = '#8df75c';
+            backgroundType.style.background = '#99E575';
         break;
         case "fire":
             backgroundType.style.background = '#ee8130';
@@ -111,16 +111,19 @@ function changeBackground(type) {
             backgroundType.style.background = '#6390f0';
         break;
         case "electric":
-            backgroundType.style.background = '#F7D02C';
+            backgroundType.style.background = '#edd977';
         break;
         case "ground":
-            backgroundType.style.background = '#BD5943';
+            backgroundType.style.background = '#c8d3e5';
         break;
         case "poison":
-            backgroundType.style.background = '#622283';
+            backgroundType.style.background = '#B836FF';
         break;
         case "rock":
-            backgroundType.style.background = '#c65cf7';
+            backgroundType.style.background = '#c8d3e5';
+        break;
+        case "psychic":
+            backgroundType.style.background = '#D769A3';
         break;
     }
 }
