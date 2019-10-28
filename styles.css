@@ -107,6 +107,10 @@ body {
     border-radius: 4px;
 }
 
+.hp-bar {
+    margin-left: 2%;
+}
+
 
 /* stats styles */
 
@@ -115,31 +119,53 @@ body {
     height: 60px;
     margin-right: 7px;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: bold;
     border-radius: 20px 0px;
     color: #605F5A;
-    /* border: 5px solid darkred; */
-    background: linear-gradient(159deg, #C8A48C 0%, #96B1AD 55%, 
-    rgba(181,198,208,1) 55%, rgba(224,239,249,1) 100%);
 }
 
-/* #defenseStat {
-    background: linear-gradient(159deg, #C8A48C 0%, #96B1AD 55%, 
-    rgba(181,198,208,1) 55%, rgba(224,239,249,1) 100%);
+#defenseStat {
+    background: linear-gradient(180deg, #FFEFD2 0%, #FFEFD2 55%, 
+    #e6c88f 55%, #e6c88f 100%);
 }
 #specialDefenseStat {
-    background: linear-gradient(159deg, #C8A48C 0%, #96B1AD 55%, 
-    rgba(181,198,208,1) 55%, rgba(224,239,249,1) 100%);
-} */
+    background: linear-gradient(180deg, #E6DAFF 0%, #E6DAFF 55%, 
+    #CEBBF5 55%, #CEBBF5 100%);
+}  
+#attackStat {
+    background: linear-gradient(180deg, #EBFEDD 0%, #EBFEDD 55%, 
+    #9ee271 55%, #9ee271 100%);
+}  
+#specialAttackStat {
+    background: linear-gradient(180deg, #C4F4FF 0%, #C4F4FF 55%, 
+    #71cbe2 55%, #71cbe2 100%);
+} 
+
+#speedStat {   
+    background: linear-gradient(180deg, #FFFDFE 0%, #FFFDFE 55%, 
+    #e6b6ce 55%, #e6b6ce 100%);
+} 
+
+#name_type {
+    background: linear-gradient(180deg, #FFDACA 0%, #FFDACA 55%, 
+    #e6a488 55%, #e6a488 100%);
+}
+
+#numberStat{
+    background: linear-gradient(180deg, #E9F6FF 0%, #E9F6FF 55%, 
+    #a4cbe6 55%, #a4cbe6 100%);
+}
+
 .description-stat {
-    margin: 6%;
+    margin: 5% 5% 0 5%;
 }
 
 
 .description-stat.right-text {
     text-align: right;
 }
+
 
 .hidden {
     display: none;
@@ -161,21 +187,30 @@ body {
     max-width: 100%;
 }
 
+input[type=text], button {
+    outline: none;
+}
 /* media queries */
 
 @media screen and (min-width: 320px) {
 
-    .container__description__stat {
+    /* .container__description__stat {
+        width: 40%;
+    } */
 
-        width: 35%;
-    }
-
-    .description-stat {
-        /* margin: 12% 8%; */
-    }
 
     .container__description__stat{
 
-        font-size: .6em;
+        font-size: .8em;
+    }
+
+    .container__sprite {
+        width: 35%;
+        height: 30%;
+    }
+
+    .sprite {
+        height: 120px;
+        /* border: 3px solid #000; */
     }
 }
