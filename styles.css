@@ -63,7 +63,7 @@ body {
 /* Pokemon */
 
 .pokemon {
-    width: 95vw;
+    width: 98vw;
     /* height: 95vh; */
     margin-top: 10%;
     border-radius: 20px;
@@ -93,7 +93,7 @@ body {
 
 
 .container-bar {
-    width: 100px;
+    width: 120px;
     height: 20px;
     border: 5px solid #000;
     border-top: none;
@@ -104,7 +104,7 @@ body {
 }
 
 .health-bar {
-    border: 2px solid #6ab04c;
+    border: 2px solid #b6e6bd;
     border-radius: 4px;
 }
 
@@ -118,46 +118,51 @@ body {
 .container__description__stat {
     width: 45%;
     height: 60px;
-    margin-right: 7px;
     margin-bottom: 20px;
     font-size: 1em;
     font-weight: bold;
     border-radius: 20px 0px;
-    health
 }
 
 #defenseStat {
     background: linear-gradient(180deg, #FFEFD2 0%, #FFEFD2 55%, 
     #e6c88f 55%, #e6c88f 100%);
+    border: 2px solid #e6c88f;
 }
 #specialDefenseStat {
     background: linear-gradient(180deg, #E6DAFF 0%, #E6DAFF 55%, 
     #CEBBF5 55%, #CEBBF5 100%);
+    border: 2px solid #CEBBF5;
 }  
 #attackStat {
     background: linear-gradient(180deg, #EBFEDD 0%, #EBFEDD 55%, 
     #9ee271 55%, #9ee271 100%);
+    border: 2px solid #9ee271;
+    
 }  
 #specialAttackStat {
     background: linear-gradient(180deg, #C4F4FF 0%, #C4F4FF 55%, 
     #71cbe2 55%, #71cbe2 100%);
+    border: 2px solid #71cbe2;
 } 
 
 #speedStat {   
     background: linear-gradient(180deg, #FFFDFE 0%, #FFFDFE 55%, 
     #e6b6ce 55%, #e6b6ce 100%);
+    border: 2px solid #e6b6ce;
 } 
 
 #name_type {
     background: linear-gradient(180deg, #FFDACA 0%, #FFDACA 55%, 
     #e6a488 55%, #e6a488 100%);
-    margin-top: 8%;
-    /* border: 5px solid darkred; */
+    margin-top: 6%;
+    border: 2px solid #e6a488;
 }
 
 #numberStat{
     background: linear-gradient(180deg, #E9F6FF 0%, #E9F6FF 55%, 
     #a4cbe6 55%, #a4cbe6 100%);
+    border: 2px solid #a4cbe6;
 }
 
 .description-stat {
@@ -196,23 +201,213 @@ input[type=text], button {
 
 /* media queries */
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 320px){
     .container__description__stat{
-        width: 43%;
+        width: 40%;
         font-size: .8em;
-        margin-bottom: 5%;
+        margin-bottom: 3%;
     }
 
     .container__sprite {
-        width: 38%;
+        width: 40%;
         height: 30%;
+        /* border: 5px solid darkred; */
+    }
+
+    .sprite{
+        height: 150px;
     }
 }
 
-@media screen and (min-width: 411px) {
+@media screen and (min-width: 550px) {
+
+    .container__description__stat{
+        width: 30%;
+        font-size: .8em;
+        margin-bottom: 3%;
+    }
+
+    .container__sprite {
+        width: 30%;
+        height: 35%;
+        /* border: 5px solid darkred; */
+    }
+
+    .sprite{
+        height: 250px;
+    }
+
+    .container-bar {
+        width: 200px;
+        height: 20px;
+        border: 5px solid #000;
+        border-top: none;
+        border-right: none;
+        font-size: .8em;
+        font-weight: bold;
+        margin: 5px 25px;
+    }
+    
+    .health-bar {
+        border: 2px solid #6ab04c;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .stats {
+        height: 600px;
+        display: flex;
+        flex-flow: column wrap-reverse; 
+        /* border: 5px solid darkred;  */
+    }
+
     .container__description__stat{
         width: 45%;
-        margin-bottom: 5%;
-        font-size: .8em;
+        margin: 1% 0 5% 0;
+        font-size: 1em;
+        /* border: 5px solid darkred; */
+    }
+
+    .container__sprite {
+        width: 40%;
+        height: 32%;
+        /* border: 5px solid darkred; */
+    }
+
+    .sprite {
+        height: 300px;
+        /* border: 3px solid #000; */
+    }
+
+    .container-bar {
+        width: 300px;
+        height: 25px;
+        border: 5px solid #000;
+        border-top: none;
+        border-right: none;
+        font-size: 1em;
+        font-weight: bold;
+        margin: 5px 25px;
+    }
+    
+    .health-bar {
+        border: 2px solid #6ab04c;
+        border-radius: 4px;
+    }
+
+    .description-stat {
+        margin: 1% 5% 0 5%;
+    }
+    .input__search,.button__search {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (min-width: 1000px)  {
+
+    .stats {
+        height: 700px;
+        display: flex;
+        flex-flow: column wrap-reverse; 
+        /* border: 5px solid darkred;  */
+    }
+
+    .container__description__stat{
+        width: 25%;
+        height: 15%;
+        margin: 1% 0 5% 0;
+        font-size: 1.2em;
+        /* border: 5px solid darkred; */
+    }
+
+    .description-stat {
+        margin: 2% 5% 0 5%;
+    }
+
+    .container__sprite {
+        width: 20%;
+        height: 30%;
+        /* border: 5px solid darkred; */
+    }
+
+    .sprite {
+        height: 300px;
+        /* border: 3px solid #000; */
+    }
+
+    .container-bar {
+        width: 400px;
+        height: 35px;
+        border: 5px solid #000;
+        border-top: none;
+        border-right: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 5px 25px;
+    }
+    
+    .health-bar {
+        border: 2px solid #6ab04c;
+        border-radius: 4px;
+    }
+
+    
+    .input__search,.button__search {
+        font-size: 1.5em;
+    }
+}
+@media screen and (min-width: 1920px)  {
+
+    .stats {
+        height: 700px;
+        display: flex;
+        flex-flow: column wrap-reverse; 
+        /* border: 5px solid darkred;  */
+    }
+
+    .container__description__stat{
+        width: 25%;
+        height: 15%;
+        margin: 1% 0 5% 0;
+        font-size: 1.2em;
+        /* border: 5px solid darkred; */
+    }
+
+    .description-stat {
+        margin: 2% 5% 0 5%;
+    }
+
+    .container__sprite {
+        width: 20%;
+        height: 30%;
+        /* border: 5px solid darkred; */
+    }
+
+    .sprite {
+        height: 300px;
+        /* border: 3px solid #000; */
+    }
+
+    .container-bar {
+        width: 400px;
+        height: 35px;
+        border: 5px solid #000;
+        border-top: none;
+        border-right: none;
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 5px 25px;
+    }
+    
+    .health-bar {
+        border: 2px solid #6ab04c;
+        border-radius: 4px;
+    }
+
+    
+    .input__search,.button__search {
+        font-size: 1.5em;
     }
 }

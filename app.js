@@ -27,8 +27,6 @@ function searchPokemon() {
     
     axios.get(pokemon)
         .then(pokemonJSON => {
-            console.log(pokemonJSON);
-            
             stats.push({
                 name: pokemonJSON.data.name,
                 ...pokemonJSON.data.types.length != 1 ? 
@@ -102,28 +100,43 @@ function changeBackground(type) {
     
     switch (typeBackground.length != 1 ? typeBackground[1] : typeBackground[0]) {
         case "grass":
-            backgroundType.style.background = '#99E575';
+            backgroundType.style.background = '#4baea0';
         break;
         case "fire":
-            backgroundType.style.background = '#ee8130';
+            backgroundType.style.background = '#f39422';
         break;
         case "water":
             backgroundType.style.background = '#6390f0';
         break;
         case "electric":
-            backgroundType.style.background = '#edd977';
+            backgroundType.style.background = '#f7b71d';
         break;
         case "ground":
-            backgroundType.style.background = '#c8d3e5';
+            backgroundType.style.background = '#da9833';
         break;
         case "poison":
-            backgroundType.style.background = '#B836FF';
+            backgroundType.style.background = '#745c97';
         break;
         case "rock":
-            backgroundType.style.background = '#c8d3e5';
+            backgroundType.style.background = '#719192';
         break;
         case "psychic":
-            backgroundType.style.background = '#D769A3';
+            backgroundType.style.background = '#dd6892';
+        break;
+        case "fairy":
+            backgroundType.style.background = '#eea5f6';
+        break;
+        case "ice":
+            backgroundType.style.background = '#e6f8f9';
+        break;
+        case "ghost":
+            backgroundType.style.background = '#7f78d2';
+        break;
+        case "dark":
+            backgroundType.style.background = '#394a6d';
+        break;
+        case "fighting":
+            backgroundType.style.background = '#b5525c';
         break;
     }
 }
