@@ -80,8 +80,8 @@ body {
 
 
 .container__sprite {
-    width: 150px;
-    height: 150px;
+    width: 45vw;
+    height: 30%;
     /* border: 5px solid #000; */
     margin: 22px 10px;
 }
@@ -104,7 +104,7 @@ body {
 }
 
 .health-bar {
-    border: 2px solid #b6e6bd;
+    border: 2px solid #52ae4b;
     border-radius: 4px;
 }
 
@@ -116,10 +116,10 @@ body {
 /* stats styles */
 
 .container__description__stat {
-    width: 45%;
-    height: 60px;
-    margin-bottom: 20px;
-    font-size: 1em;
+    width: 40%;
+    height: 15%;
+    font-size: .8em;
+    margin-bottom: 3%;
     font-weight: bold;
     border-radius: 20px 0px;
 }
@@ -201,30 +201,10 @@ input[type=text], button {
 
 /* media queries */
 
-@media screen and (min-width: 320px){
-    .container__description__stat{
-        width: 40%;
-        font-size: .8em;
-        margin-bottom: 3%;
-    }
-
-    .container__sprite {
-        width: 40%;
-        height: 30%;
-        /* border: 5px solid darkred; */
-    }
-
-    .sprite{
-        height: 150px;
-    }
-}
-
 @media screen and (min-width: 550px) {
-
     .container__description__stat{
         width: 30%;
-        font-size: .8em;
-        margin-bottom: 3%;
+        height: 20%;
     }
 
     .container__sprite {
@@ -254,160 +234,37 @@ input[type=text], button {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1440px) {
 
     .stats {
         height: 600px;
-        display: flex;
-        flex-flow: column wrap-reverse; 
-        /* border: 5px solid darkred;  */
     }
-
-    .container__description__stat{
-        width: 45%;
-        margin: 1% 0 5% 0;
-        font-size: 1em;
-        /* border: 5px solid darkred; */
-    }
-
     .container__sprite {
-        width: 40%;
-        height: 32%;
-        /* border: 5px solid darkred; */
+        width: 30%;
+        height: 35%;
+        /* border: 5px solid #254; */
+        margin: 22px 55px;
     }
-
+    
     .sprite {
-        height: 300px;
+        height: 250px;
+        margin-left: 25%;
         /* border: 3px solid #000; */
     }
 
     .container-bar {
         width: 300px;
-        height: 25px;
-        border: 5px solid #000;
-        border-top: none;
-        border-right: none;
         font-size: 1em;
-        font-weight: bold;
-        margin: 5px 25px;
-    }
-    
-    .health-bar {
-        border: 2px solid #6ab04c;
-        border-radius: 4px;
+        height: 4%;
     }
 
-    .description-stat {
-        margin: 1% 5% 0 5%;
+    .container__description__stat {
+        font-size: 1em;
+        height: 18%;
     }
-    .input__search,.button__search {
+
+    .input__search, .button__search {
         font-size: 1.2em;
     }
-}
-
-@media screen and (min-width: 1000px)  {
-
-    .stats {
-        height: 700px;
-        display: flex;
-        flex-flow: column wrap-reverse; 
-        /* border: 5px solid darkred;  */
-    }
-
-    .container__description__stat{
-        width: 25%;
-        height: 15%;
-        margin: 1% 0 5% 0;
-        font-size: 1.2em;
-        /* border: 5px solid darkred; */
-    }
-
-    .description-stat {
-        margin: 2% 5% 0 5%;
-    }
-
-    .container__sprite {
-        width: 20%;
-        height: 30%;
-        /* border: 5px solid darkred; */
-    }
-
-    .sprite {
-        height: 300px;
-        /* border: 3px solid #000; */
-    }
-
-    .container-bar {
-        width: 400px;
-        height: 35px;
-        border: 5px solid #000;
-        border-top: none;
-        border-right: none;
-        font-size: 1.5em;
-        font-weight: bold;
-        margin: 5px 25px;
-    }
     
-    .health-bar {
-        border: 2px solid #6ab04c;
-        border-radius: 4px;
-    }
-
-    
-    .input__search,.button__search {
-        font-size: 1.5em;
-    }
-}
-@media screen and (min-width: 1920px)  {
-
-    .stats {
-        height: 700px;
-        display: flex;
-        flex-flow: column wrap-reverse; 
-        /* border: 5px solid darkred;  */
-    }
-
-    .container__description__stat{
-        width: 25%;
-        height: 15%;
-        margin: 1% 0 5% 0;
-        font-size: 1.2em;
-        /* border: 5px solid darkred; */
-    }
-
-    .description-stat {
-        margin: 2% 5% 0 5%;
-    }
-
-    .container__sprite {
-        width: 20%;
-        height: 30%;
-        /* border: 5px solid darkred; */
-    }
-
-    .sprite {
-        height: 300px;
-        /* border: 3px solid #000; */
-    }
-
-    .container-bar {
-        width: 400px;
-        height: 35px;
-        border: 5px solid #000;
-        border-top: none;
-        border-right: none;
-        font-size: 1.5em;
-        font-weight: bold;
-        margin: 5px 25px;
-    }
-    
-    .health-bar {
-        border: 2px solid #6ab04c;
-        border-radius: 4px;
-    }
-
-    
-    .input__search,.button__search {
-        font-size: 1.5em;
-    }
 }
