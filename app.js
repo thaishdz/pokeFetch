@@ -4,6 +4,8 @@ const searchButton  = document.querySelector('#js__search__button');
 const pokeSprite     = document.querySelector('#js__pokemon__sprite');
 const messageError  = document.querySelector('#js__message__error');
 const statsPokemon = document.querySelector("#stats-pokemon");
+const loading = document.querySelector("#loading");
+let timeoutID = null;
 
 
 const handlerEnter = function(event) {
@@ -13,20 +15,37 @@ const handlerEnter = function(event) {
     }
 }
 
-
 searchButton.addEventListener('click', searchPokemon);
 textSearchInput.addEventListener('keyup', handlerEnter);
+textSearchInput.addEventListener('keyup', e => {
+    renderGettingPokemon(e.target.value);
+});
 
 
-function searchPokemon() {
+function renderGettingPokemon(inputPokemon) {
+    if (timeoutID) {
+        clearInterval(timeoutID);
+    }
+
+    // Debounce API call
+    timeoutID = window.setTimeout(function() {
+        loading.classList.remove('hidden');
+        searchPokemon(inputPokemon);
+    }, 2000);
+}
+
+
+function searchPokemon(inputPokemon) {
 
     const BASE_URL = "https://pokeapi.co/api/v2/pokemon/";
     
-    const pokemon = `${BASE_URL}${textSearchInput.value}`;
+    const pokemon = `${BASE_URL}${inputPokemon.toLowerCase()}`;
+    
     const stats = [];
     
     axios.get(pokemon)
         .then(pokemonJSON => {
+            loading.classList.add('hidden');
             stats.push({
                 name: pokemonJSON.data.name,
                 ...pokemonJSON.data.types.length != 1 ? 
